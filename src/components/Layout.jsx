@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { FiHome, FiFileText, FiTrendingUp, FiCreditCard, FiLogOut } from 'react-icons/fi';
+import { FaBalanceScale} from 'react-icons/fa';
+import { BsBank } from 'react-icons/bs';
+import { TbReceiptTax } from 'react-icons/tb';
 import { Navbar, Container, Nav, Form, Dropdown, Button } from 'react-bootstrap';
 
 const Layout = () => {
@@ -12,6 +15,11 @@ const Layout = () => {
   const todosLosMeses = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
   const [meses, setMeses] = useState(todosLosMeses);
 
+  const nombresMeses = {
+    "01": "Enero", "02": "Febrero", "03": "Marzo", "04": "Abril",
+    "05": "Mayo", "06": "Junio", "07": "Julio", "08": "Agosto",
+    "09": "Septiembre", "10": "Octubre", "11": "Noviembre", "12": "Diciembre"
+  };
   // Maneja el clic en "Cerrar sesión"
   const manejarCierreSesion = () => {
     navegar('/');
@@ -72,7 +80,7 @@ const Layout = () => {
                     <Form.Check 
                       key={m}
                       type="checkbox" 
-                      label={`Mes ${m}`} 
+                      label={nombresMeses[m]} 
                       checked={meses.includes(m)} 
                       onChange={() => manejarCambioMes(m)} 
                     />
@@ -102,15 +110,15 @@ const Layout = () => {
             <span style={{ fontSize: '0.75rem', marginTop: '2px' }}>Inicio</span>
           </Nav.Link>
           <Nav.Link as={NavLink} to="/iva" className="text-center d-flex flex-column align-items-center" style={({isActive}) => ({ color: isActive ? '#3b82f6' : '#6c757d', textDecoration: 'none' })}>
-            <FiFileText size={24} />
+            <FaBalanceScale size={24} />
             <span style={{ fontSize: '0.75rem', marginTop: '2px' }}>IVA</span>
           </Nav.Link>
           <Nav.Link as={NavLink} to="/iibb" className="text-center d-flex flex-column align-items-center" style={({isActive}) => ({ color: isActive ? '#3b82f6' : '#6c757d', textDecoration: 'none' })}>
-            <FiTrendingUp size={24} />
+            <TbReceiptTax size={24} />
             <span style={{ fontSize: '0.75rem', marginTop: '2px' }}>IIBB</span>
           </Nav.Link>
           <Nav.Link as={NavLink} to="/bancos" className="text-center d-flex flex-column align-items-center" style={({isActive}) => ({ color: isActive ? '#3b82f6' : '#6c757d', textDecoration: 'none' })}>
-            <FiCreditCard size={24} />
+            <BsBank size={24} />
             <span style={{ fontSize: '0.75rem', marginTop: '2px' }}>Bancos</span>
           </Nav.Link>
         </Container>
