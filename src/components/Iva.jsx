@@ -64,7 +64,10 @@ const Iva = () => {
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
                     <XAxis dataKey="periodo" tick={{fontSize: 10, fill: '#a0a0a0'}} axisLine={false} tickLine={false} />
                     <YAxis tick={{fontSize: 10, fill: '#a0a0a0'}} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v / 1000000}M`} />
-                    <Tooltip contentStyle={{ backgroundColor: '#2d2d2d', border: 'none', color: '#fff', borderRadius: '8px' }} />
+                    <Tooltip 
+                    contentStyle={{ backgroundColor: '#2d2d2d', border: 'none', color: '#fff', borderRadius: '8px' }}
+                    formatter={(value) => value.toLocaleString('es-AR')}
+                    />
                     <Legend wrapperStyle={{ fontSize: '12px', color: '#a0a0a0' }} />
                     <Bar dataKey="ivaDebito" name="IVA Débito" fill="#dc3545" radius={[4, 4, 0, 0]} />
                     <Bar dataKey="ivaCredito" name="IVA Crédito" fill="#198754" radius={[4, 4, 0, 0]} />
@@ -88,7 +91,10 @@ const Iva = () => {
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
                     <XAxis dataKey="periodo" tick={{fontSize: 10, fill: '#a0a0a0'}} axisLine={false} tickLine={false} />
                     <YAxis tick={{fontSize: 10, fill: '#a0a0a0'}} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v / 1000000}M`} />
-                    <Tooltip contentStyle={{ backgroundColor: '#2d2d2d', border: 'none', color: '#fff', borderRadius: '8px' }} />
+                    <Tooltip
+                     contentStyle={{ backgroundColor: '#2d2d2d', border: 'none', color: '#fff', borderRadius: '8px' }}
+                     formatter={(value) => value.toLocaleString('es-AR')}
+                     />
                     <Legend wrapperStyle={{ fontSize: '12px', color: '#a0a0a0' }} />
                     <Line type="monotone" dataKey="ventasNetas" name="Ventas Netas" stroke="#dc3545" strokeWidth={3} dot={false} />
                     <Line type="monotone" dataKey="comprasNetas" name="Compras Netas" stroke="#198754" strokeWidth={3} dot={false} />

@@ -92,7 +92,10 @@ const Iibb = () => {
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#333" />
                     <XAxis dataKey="periodo" tick={{fontSize: 10, fill: '#a0a0a0'}} axisLine={false} tickLine={false} />
                     <YAxis tick={{fontSize: 10, fill: '#a0a0a0'}} axisLine={false} tickLine={false} tickFormatter={(v) => `$${v / 1000000}M`} />
-                    <Tooltip contentStyle={{ backgroundColor: '#2d2d2d', border: 'none', color: '#fff', borderRadius: '8px' }} />
+                    <Tooltip 
+                    contentStyle={{ backgroundColor: '#2d2d2d', border: 'none', color: '#fff', borderRadius: '8px' }}
+                    formatter={(value) => value.toLocaleString('es-AR')}
+                    />
                     <Line type="monotone" dataKey="iibbPagado" name="Pagado" stroke="#3b82f6" strokeWidth={3} activeDot={{ r: 6 }} />
                   </LineChart>
                 </ResponsiveContainer>

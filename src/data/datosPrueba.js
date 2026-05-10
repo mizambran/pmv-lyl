@@ -363,7 +363,7 @@ export const datosIibb = [
 // Array específico para la vista de detalle de Bancos
 export const datosBancos = [
   {
-    periodo: "01/2025",
+    periodo: "01/2026",
     // Movimientos = Movimientos Patagonia + Movimientos Galicia
     movimientos: 47500000.00, 
     // ImpDeb/Cre = Imp Patagonia + Imp Galicia
@@ -376,7 +376,7 @@ export const datosBancos = [
     galicia: 0.00
   },
   {
-    periodo: "02/2025",
+    periodo: "02/2026",
     movimientos: 47000000.00,
     impDebCre: 260000.00,
     retArba: 12313.00,
@@ -384,7 +384,7 @@ export const datosBancos = [
     galicia: 45000.00
   },
   {
-    periodo: "03/2025",
+    periodo: "03/2026",
     movimientos: 60000000.00,
     impDebCre: 296000.00,
     retArba: 48144.00,
